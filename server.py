@@ -2,7 +2,10 @@ import socket
 import os
 
 sock = socket.socket()
-sock.bind(('192.168.1.101', 8080))
+try:
+    sock.bind(('192.168.1.101', 8080))
+except:
+    sock.bind(('192.168.1.104', 8080))
 sock.listen(2)
 conn, addr = sock.accept()
 
